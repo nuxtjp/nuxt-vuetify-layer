@@ -1,73 +1,33 @@
-# Nuxt Layer Starter
+# Nuxt Vuetify Layer
 
-Create Nuxt extendable layer with this GitHub template.
+NuxtJPが管理する、日本国内向けのNuxt・Vuetify連携Layerです。パッケージ名は `@nuxtjp/vuetify-layer` です。Nuxt 3とVuetify 3の安定版を固定し、プラグイン、CSS、基本レイアウトを提供します。
 
-## Setup
+## 開発と検証 / Development and verification
 
-Make sure to install the dependencies:
-
-```bash
-pnpm install
-```
-
-## Working on your theme
-
-Your theme is at the root of this repository, it is exactly like a regular Nuxt project, except you can publish it on NPM.
-
-The `.playground` directory should help you on trying your theme during development.
-
-Running `pnpm dev` will prepare and boot `.playground` directory, which imports your theme itself.
-
-## Distributing your theme
-
-Your Nuxt layer is shaped exactly the same as any other Nuxt project, except you can publish it on NPM.
-
-To do so, you only have to check if `files` in `package.json` are valid, then run:
+Node.js 22.19以降、pnpm 10.29.3を使用します。依存設定とロックファイルを同梱し、単独cloneから検証できます。
 
 ```bash
-npm publish --access public
-```
-
-Once done, your users will only have to run:
-
-```bash
-npm install --save your-theme
-```
-
-Then add the dependency to their `extends` in `nuxt.config`:
-
-```ts
-defineNuxtConfig({
-  extends: 'your-theme'
-})
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-pnpm dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
+pnpm install --frozen-lockfile
+pnpm lint
 pnpm build
 ```
 
-Or statically generate it with:
+`.playground` はこのLayerを読み込む検証用アプリです。`pnpm dev` でローカル開発できます。
 
-```bash
-pnpm generate
-```
+## 利用 / Consumption
 
-Locally preview production build:
+レジストリ配布は未実施です。配布準備後、呼び出し元のアプリでバージョンを固定した依存として導入し、Nuxt設定の `extends` に `@nuxtjp/vuetify-layer` を指定します。ローカル検証ではcloneしたLayerのパスを呼び出し元から指定してください。
 
-```bash
-pnpm preview
-```
+## セキュリティ確認 / Security review
 
-Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+開発用Nuxt CLIの間接依存 `node-forge 1.4.0` には未修正のHighの署名検証脆弱性があります。開発時のHTTPS・証明書機能は使用しません。この既知リスクを記録したうえでTransferとソース反映のみ承認されています。npm配布は行いません。
+
+## English
+
+A Nuxt layer maintained by NuxtJP for the Japanese package ecosystem. It integrates stable Nuxt 3 and Vuetify 3 through a plugin, styles, and base layouts. The package is independently testable with the commands above; application composition belongs to the caller. Registry distribution has not been activated. Once released, callers should use an exact versioned dependency and configure `extends` accordingly.
+
+The development-only Nuxt CLI dependency `node-forge 1.4.0` has an unpatched High-severity signature-verification advisory. Development HTTPS and certificate features are not used. Transfer and source synchronization were approved with this residual risk recorded; npm publication remains disabled. Nuxt's CLI also reports a schema peer-version warning while the verified Nuxt 3 production build succeeds.
+
+## License
+
+MIT. The existing license and copyright attribution are retained; see LICENSE and NOTICE. External dependencies retain their licenses.
