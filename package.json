@@ -9,7 +9,8 @@
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
-    "postinstall": "nuxt prepare .playground"
+    "postinstall": "nuxt prepare .playground",
+    "test:dependency-security": "node --test scripts/dependency-security.check.cjs"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "1.17.0",
@@ -47,5 +48,15 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "pnpm": {
+    "overrides": {
+      "@nuxt/devtools>simple-git": "4.0.2"
+    },
+    "patchedDependencies": {
+      "braces@3.0.3": "patches/braces@3.0.3.patch",
+      "node-forge@1.4.0": "patches/node-forge@1.4.0.patch",
+      "@nuxt/devtools@3.4.2": "patches/nuxt-devtools@3.4.2.patch"
+    }
   }
 }
