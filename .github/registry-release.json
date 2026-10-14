@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "repository": "nuxtjp/nuxt-vuetify-layer",
+  "defaultBranch": "main",
+  "requiredWorkflows": [
+    "dependency-security.yml",
+    "oss-policy.yml",
+    "verify.yml"
+  ],
+  "packages": [
+    {
+      "ecosystem": "npm",
+      "manifest": "package.json",
+      "name": "@nuxtjp/vuetify-layer",
+      "installDirectory": "."
+    }
+  ]
+}
