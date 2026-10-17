@@ -44,7 +44,8 @@
     "plugins",
     "LICENSE",
     "NOTICE",
-    "README.md"
+    "README.md",
+    "third-party"
   ],
   "publishConfig": {
     "access": "public"

@@ -2,3 +2,7 @@ Repository maintenance changes
 Copyright 2026 HAT Inc.
 
 Existing upstream copyrights, license texts, and application licensing remain applicable.
+
+Original copyright and license text for source-controlled dependency patches
+is retained in third-party/LICENSES/; see third-party/README.md and
+third-party/patch-attribution.json for original source and change provenance.
