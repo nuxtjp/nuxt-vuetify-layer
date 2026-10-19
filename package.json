@@ -59,5 +59,11 @@
       "node-forge@1.4.0": "patches/node-forge@1.4.0.patch",
       "@nuxt/devtools@3.4.2": "patches/nuxt-devtools@3.4.2.patch"
     }
-  }
+  },
+  "keywords": [
+    "nuxt",
+    "vue",
+    "vuetify",
+    "nuxt-layer"
+  ]
 }
