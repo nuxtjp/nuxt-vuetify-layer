@@ -1,6 +1,7 @@
 # @nuxtjp/vuetify-layer
 
-Nuxt 3とVuetify 3を組み合わせ、プラグイン・CSS・基本レイアウトを再利用できます。
+Nuxt向けのVuetify 4プラグイン・CSS・基本レイアウトを再利用できます。
+同梱のplaygroundはNuxt 4を使います。公開peer範囲の対応状況は下記を参照してください。
 
 ## 利用前の確認
 
@@ -32,7 +33,8 @@ Start a Nuxt application with Vuetify plugins, styles and a basic layout already
 
 ## What you can do
 
-- Reuse the declared Nuxt 3 and Vuetify 3 layer.
+- Reuse the Vuetify 4 plugins, styles and layout in a Nuxt layer.
+- Exercise the included Nuxt 4 playground.
 - Validate the integration through the included playground.
 
 ## Current scope
@@ -61,3 +63,11 @@ pnpm build
 
 Dependency updates: [repository policy](docs/dependency-updates.md).
 Registry releases: [version tags and GitHub OIDC](docs/registry-release.md).
+
+## Declared compatibility
+
+The current manifest pins Vuetify 4.2.6 and the development playground uses
+Nuxt 4. The peer declaration still names Nuxt 3 (`^3.21.11`); the playground
+build does not establish independent consumer acceptance for that peer range.
+Treat that declaration as an outstanding compatibility alignment, not proof of
+a Nuxt 3/Vuetify 3 implementation or a published Nuxt 4 consumer package.
